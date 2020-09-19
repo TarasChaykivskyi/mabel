@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'questrial';
+  src: url('../fonts/questrial.ttf');
+}
+@font-face {
+  font-family: 'mulish';
+  src: url('../fonts/Mulish-400.ttf');
+}
+@font-face {
+  font-family: 'mulish300';
+  src: url('../fonts/Mulish-Italic-300.ttf');
+}
+
+$color1: #B0AEA7;
+$color2: #264BCF;
+$fontFace1: questrial;
+$fontFace2: mulish;
+$fontFace3: mulish300;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontFace2;
+  color: #000;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.container {
+  max-width: 1110px;
+  margin: auto;
+}
