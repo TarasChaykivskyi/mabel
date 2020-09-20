@@ -11,8 +11,10 @@
   src: url('../fonts/Mulish-Italic-300.ttf');
 }
 
-$color1: #B0AEA7;
+$color1: #F9F9F6;
 $color2: #264BCF;
+$color3: #EBE8E2;
+$color4: #8E8F89;
 $fontFace1: questrial;
 $fontFace2: mulish;
 $fontFace3: mulish300;
@@ -37,4 +39,413 @@ body {
 .container {
   max-width: 1110px;
   margin: auto;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.checkbox {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $color3;
+  background: #fff;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+
+  span {
+    color: #ffffff;
+    text-align: center;
+    line-height: 24px;
+    visibility: hidden;
+  }
+
+  &.active {
+    background-color: $color2;
+
+    span {
+      visibility: visible;
+    }
+  }
+}
+
+#choose-service {
+  margin-top: 60px;
+  margin-bottom: 74px;
+
+  .choose-service-top {
+    font-family: $fontFace1;
+    margin-bottom: 30px;
+
+    h2 {
+      float: left;
+      font-weight: normal;
+      font-size: 36px;
+    }
+
+    span {
+      display: block;
+      float: right;
+      font-size: 21px;
+    }
+  }
+
+  .choose-service {
+    margin-bottom: 30px;
+
+    .choose-service-navigation {
+      width: 100%;
+      height: 90px;
+      border: 1px solid $color3;
+      border-radius: 1px;
+      list-style: none;
+      display: flex;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 110px;
+        height: 90px;
+        border-right: 1px solid $color3;
+        cursor: pointer;
+
+        &.active {
+          background: $color1;
+          height: 88px;
+          border-bottom: 3px solid $color2;
+        }
+
+        img {
+          display: block;
+          margin: 7px auto;
+        }
+      }
+    }
+
+  }
+
+  .list-data-service {
+    display: flex;
+    height: 100%;
+
+    .data-service {
+      display: block;
+      width: 70%;
+      border: 1px solid $color3;
+
+      .nav-data-service {
+        display: block;
+        float: left;
+        width: 30%;
+        height: 100%;
+        border-right: 1px solid $color3;
+
+        li {
+          width: 100%;
+          line-height: 40px;
+          padding-left: 15px;
+          position: relative;
+          cursor: pointer;
+
+          &.active {
+            background-color: $color3;
+
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              right: -10px;
+              top: 10px;
+              width: 20px;
+              height: 20px;
+              background: #ffffff;
+              transform-origin: center;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+
+      .selected-data-service {
+        width: 70%;
+        display: block;
+        float: left;
+        padding: 15px 20px 20px;
+
+        .item {;
+          width: 90%;
+          margin-left: 10%;
+          padding: 15px 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid $color3;
+          position: relative;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .checkbox {
+            display: block;
+            position: absolute;
+            top: 24px;
+            left: -40px;
+            z-index: 1;
+          }
+
+          .item-left-side {
+
+            .data-service-name {
+              margin-left: 15px;
+              display: block;
+              float: left;
+
+              h5 {
+                font-size: 14px;
+                line-height: 20px;
+              }
+
+              img {
+                position: relative;
+                top: 2px;
+              }
+
+              span {
+                color: #8E8F89;                font-size: 12px;
+                line-height: 15px;
+              }
+            }
+          }
+
+          .item-right-side {
+
+            .details {
+              display: block;
+              float: left;
+              font-size: 12px;
+              line-height: 40px;
+              color: $color2;
+              font-weight: 600;
+              margin-right: 15px;
+            }
+
+            .price {
+              display: block;
+              float: left;
+
+              > span {
+                display: block;
+                text-align: right;
+
+                &:first-child {
+                  font-size: 14px;
+                  line-height: 20px;
+
+                  span {
+
+                    &.old {
+                      text-decoration: line-through;
+                      color: $color4;
+                      margin-right: 8px;
+                    }
+                  }
+                }
+
+                &:last-child {
+                  font-size: 12px;
+                  line-height: 15px;
+                  color: $color4;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .choose-service-result {
+      display: block;
+      width: 30%;
+      height: 100%;
+      background-color: $color3;
+      padding: 10px 5px 0;
+
+      h3 {
+        color: $color4;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 20px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .block {
+        background-color: #ffffff;
+        padding: 5px 5px 10px;
+        margin-bottom: 5px;
+
+        .addedService {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          line-height: 20px;
+          border-bottom: 1px solid $color3;
+          padding: 10px 0;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          div {
+
+            .price {
+              text-transform: uppercase;
+              margin-right: 15px;
+            }
+
+            .remove {
+              font-size: 30px;
+              line-height: 20px;
+              color: $color2;
+              position: relative;
+              top: 5px;
+            }
+          }
+        }
+
+        &.block-master {
+          height: 50px;
+          position: relative;
+          padding-left: 10px;
+
+          .select {
+            position: absolute;
+            top: 14px;
+            right: 20px;
+          }
+        }
+
+        &.block-date {
+          display: flex;
+          height: 50px;
+          padding: 5px;
+
+          > div {
+            width: 50%;
+            padding-left: 10px;
+
+            &:first-child {
+              border-right: 1px solid $color3;
+            }
+          }
+        }
+
+        h4 {
+          color: $color4;
+          font-size: 12px;
+          line-height: 15px;
+          font-weight: 600;
+        }
+
+        .text-block {
+          font-size: 14px;
+          line-height: 20px;
+          margin-top: 5px;
+        }
+      }
+
+      .container-total {
+        margin-top: 20px;
+
+        > div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 10px;
+
+          &.tax {
+            padding-bottom: 15px;
+            border-bottom: 1px dotted #B0AEA7;
+          }
+
+          &.total {
+            padding: 10px 10px 20px;
+
+            span {
+              font-weight: bold;
+              font-size: 18px;
+              line-height: 30px;
+            }
+          }
+
+          span {
+            font-size: 14px;
+            line-height: 20px;
+
+            &.price {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .conditions {
+          justify-content: center;
+          margin-bottom: 20px;
+
+          .checkbox {
+            margin-right: 15px;
+          }
+
+          span {
+            font-size: 14px;
+            line-height: 20px;
+
+            a {
+              color: $color2;
+            }
+          }
+        }
+
+        .order {
+          display: block;
+          width: 100%;
+          height: 50px;
+          background-color: $color2;
+          color: #ffffff;
+          border-radius: 10px;
+          line-height: 50px;
+          text-align: center;
+          font-size: 15px;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin: 15px 0;
+        }
+      }
+    }
+  }
 }

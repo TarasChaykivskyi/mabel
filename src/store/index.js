@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-       title: 'Choose service'
+       title: ''
     },
     getters: {
        TITLE: state => state.title
