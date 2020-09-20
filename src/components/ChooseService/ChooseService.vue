@@ -76,7 +76,7 @@
           <h4>Master</h4>
           <div class="text-block">
             <img :src="require(`@/assets/images/Star.png`)" alt="image">
-            <span>Sabrina Habibi</span>
+            <span>4.5 Sabrina Habibi</span>
           </div>
           <button class="select">
             <img :src="require(`@/assets/images/angle-down.png`)" alt="image">
