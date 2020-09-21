@@ -10,14 +10,16 @@ const store = new Vuex.Store({
         services: [],
         subNavigate: [],
         offers: [],
-        selectedOffers: []
+        selectedOffers: [],
+        subtotalService: 0
     },
     getters: {
         ACTIVE_SUB_LINK: state => state.activeCurrentNavigationLink,
         SERVICES: state => state.services,
         SUB_NAVIGATE: state => state.subNavigate,
         OFFERS: state => state.offers,
-        SELECTED_OFFERS: state => state.selectedOffers
+        SELECTED_OFFERS: state => state.selectedOffers,
+        SUB_TOTAL_SERVICE: state => state.subtotalService
     },
     mutations: {
         setServices: (state, services) => state.services = services,
@@ -53,8 +55,38 @@ const store = new Vuex.Store({
             }
         },
         selectOffers: (state, arr) => {
-            state.offers = arr[0];
-            state.selectedOffers.push(state.offers[arr[1]])
+            let offer = state.offers[arr[1]];
+            if(offer.selected === true) {
+                state.offers = arr[0];
+                state.selectedOffers.push(offer);
+                state.subtotalService += offer.price;
+            }else {
+                for(let item in state.selectedOffers) {
+                    if(state.selectedOffers[item].idOffers === offer.idOffers) {
+                        state.selectedOffers.splice(item, 1);
+                        state.subtotalService -= offer.price;
+                    }
+                }
+            }
+        },
+        removeSelectedOffers: (state, index) => {
+            let selectId = state.selectedOffers[index].idOffers;
+            state.subtotalService -= state.selectedOffers[index].price;
+            state.selectedOffers.splice(index, 1);
+            for(let service of state.services) {
+                for(let nav of service.nav) {
+                    for(let offer of nav.offers) {
+                        if(offer.idOffers === selectId) {
+                            offer.selected = false;
+                        }
+                    }
+                }
+            }
+        },
+        orderServices: state => {
+            state.activeCurrentNavigationLink = 1;
+            state.subtotalService = 0;
+            state.selectedOffers = [];
         }
     },
     actions: {
@@ -79,6 +111,13 @@ const store = new Vuex.Store({
         },
         SELECT_OFFERS({commit}, arr) {
             commit('selectOffers', arr);
+        },
+        REMOVE_SELECTED_OFFERS({commit}, index) {
+            commit('removeSelectedOffers', index);
+        },
+        ORDER_SERVICES({commit}) {
+            commit('orderServices');
+            commit('setSubNavigate', []);
         }
     }
 });

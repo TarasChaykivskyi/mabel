@@ -12,14 +12,14 @@
             {
               "idOffers": 1,
               "titleOffer": "face offer 1.1",
-              "price": 135,
+              "price": 100,
               "oldPrice": 34,
               "selected": false
             },
             {
               "idOffers": 2,
               "titleOffer": "face offer 1.2",
-              "price": 324,
+              "price": 210,
               "selected": false
             }
           ]

@@ -352,6 +352,39 @@ ul {
           height: 50px;
           position: relative;
           padding-left: 10px;
+          cursor: pointer;
+
+          .block-masters-list {
+            display: none;
+            border-top: 3px solid $color2;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            background: #ffffff;
+            padding: 10px;
+            z-index: 99 ;
+
+            &.active {
+              display: block;
+            }
+
+            .masters-list {
+              padding-bottom: 10px;
+              border-bottom: 1px solid $color3;
+              cursor: pointer;
+
+              &:hover {
+                color: $color2;
+              }
+
+              &:last-child {
+                border-bottom: none;
+              }
+            }
+          }
 
           .select {
             position: absolute;
