@@ -11,7 +11,8 @@ const store = new Vuex.Store({
         subNavigate: [],
         offers: [],
         selectedOffers: [],
-        subtotalService: 0
+        subtotalService: 0,
+        positionSliderServices: 15
     },
     getters: {
         ACTIVE_SUB_LINK: state => state.activeCurrentNavigationLink,
@@ -19,7 +20,8 @@ const store = new Vuex.Store({
         SUB_NAVIGATE: state => state.subNavigate,
         OFFERS: state => state.offers,
         SELECTED_OFFERS: state => state.selectedOffers,
-        SUB_TOTAL_SERVICE: state => state.subtotalService
+        SUB_TOTAL_SERVICE: state => state.subtotalService,
+        POSITION_SLIDER_SERVICES: state => state.positionSliderServices
     },
     mutations: {
         setServices: (state, services) => state.services = services,
@@ -87,6 +89,25 @@ const store = new Vuex.Store({
             state.activeCurrentNavigationLink = 1;
             state.subtotalService = 0;
             state.selectedOffers = [];
+        },
+        setPositionSliderServices: (state, index) => {
+            let pos = state.positionSliderServices;
+            let max = -pos;
+            let sliderLength = (state.services.length + 1) * 100;
+            let windowWidth = window.innerWidth;
+            if(index === 1) {
+                if(sliderLength - max > windowWidth) {
+                    pos -= 100;
+                }
+            }else {
+                if(pos < 0) {
+                    pos += 100;
+                }
+            }
+            state.positionSliderServices = pos;
+            // console.log(pos)
+            // console.log(max)
+            // console.log(windowWidth)
         }
     },
     actions: {
@@ -118,6 +139,9 @@ const store = new Vuex.Store({
         ORDER_SERVICES({commit}) {
             commit('orderServices');
             commit('setSubNavigate', []);
+        },
+        SET_POSITION_SLIDER_SERVICES({commit}, index) {
+            commit('setPositionSliderServices', index);
         }
     }
 });

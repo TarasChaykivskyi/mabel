@@ -1,6 +1,7 @@
 <template>
   <div class="choose-service">
-    <ul class="choose-service-navigation">
+    <ul class="choose-service-navigation"
+        :style="{left: sliderLeft}">
       <li class="item"
           :class="{active: 1 === activeNavigationLink}"
           @click="changeNavigationLink($event.target, 1, [])"
@@ -33,8 +34,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-      services: 'SERVICES'
-    })
+      services: 'SERVICES',
+      positionSlider: 'POSITION_SLIDER_SERVICES'
+    }),
+    sliderLeft() {
+      return this.positionSlider + 'px';
+    }
   },
   methods: {
     ...mapActions({

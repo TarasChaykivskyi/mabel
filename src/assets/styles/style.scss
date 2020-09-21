@@ -98,6 +98,16 @@ ul {
     font-family: $fontFace1;
     margin-bottom: 34px;
 
+    .top-actions-choose-service {
+      display: none;
+      float: right;
+
+      button {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
     h2 {
       float: left;
       font-weight: normal;
@@ -135,7 +145,7 @@ ul {
 
         &.active {
           background: $color1;
-          height: 88px;
+          height: 89px;
           border-bottom: 3px solid $color2;
         }
 
@@ -258,7 +268,7 @@ ul {
             .price {
               display: block;
               float: left;
-              width: 75px;
+              width: 90px;
 
               > span {
                 display: block;
@@ -531,6 +541,13 @@ ul {
 
       .data-service {
 
+        .nav-data-service {
+
+          li {
+            font-size: 14px;
+          }
+        }
+
         .selected-data-service {
 
           .item {
@@ -556,6 +573,144 @@ ul {
               left: 0;
               margin-right: 10px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+
+  .wrapper {
+    padding: 0;
+  }
+
+  #choose-service {
+    margin: 30px auto;
+
+    .choose-service-top {
+      padding: 0 15px;
+
+      .top-actions-choose-service {
+        display: block;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .choose-service {
+      padding: 0 15px;
+      height: 90px;
+      position: relative;
+      overflow: hidden;
+
+      .choose-service-navigation {
+        width: auto;
+        position: absolute;
+        top: 0;
+        left: 15px;
+
+        .item {
+          width: 100px;
+          min-width: 100px;
+        }
+      }
+    }
+
+    .list-data-service {
+      flex-direction: column;
+
+      .data-service {
+        width: 100%;
+        border: none;
+
+        .nav-data-service {
+          width: 100%;
+          border-right: none;
+
+          li {
+            padding: 0 15px;
+
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              width: 20px;
+              height: 20px;
+              transform-origin: center;
+              background-image: url("../../assets/images/arrow-actions-slider.png");
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 30%;
+            }
+
+            &.active {
+
+              &:after {
+                background-color: transparent;
+                transform: rotate(-90deg);
+                right: 15px;
+                background-image: url("../../assets/images/arrow-actions-slider.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 30%;
+              }
+            }
+          }
+        }
+
+        .selected-data-service {
+          padding: 0 15px;
+          width: 100%;
+
+          .item {
+            width: 100%;
+            margin: 0;
+
+            .checkbox {
+              left: 0;
+            }
+
+            .item-left-side {
+              padding-left: 30px;
+            }
+          }
+        }
+      }
+
+      .choose-service-result {
+        width: 100%;
+        padding: 11px 0 0;
+
+        .block {
+          width: calc(100% - 30px);
+          margin: 10px auto;
+
+          .addedService {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
+
+        .container-total {
+
+          > div {
+            padding: 0 15px 0 15px;
+
+            &.total {
+              padding: 4px 15px 0 15px;
+            }
+          }
+
+          .order {
+            width: calc(100% - 30px);
+            margin: 15px auto;
+            left: 0;
           }
         }
       }

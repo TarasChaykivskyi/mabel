@@ -1,10 +1,5 @@
-
-
-
-<!--v-if="selectedOffers.length"-->
-
 <template>
-  <div>
+  <div v-if="selectedOffers.length">
     <div class="block block-master"
          @click="selectMasterOffer"
     >
