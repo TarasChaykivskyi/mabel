@@ -1,0 +1,142 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Face",
+      "image": "face",
+      "nav": [
+        {
+          "idNavigation": 1,
+          "titleNavigation": "GEL Manicure",
+          "offers": [
+            {
+              "idOffers": 1,
+              "titleOffer": "face offer 1.1",
+              "price": 135,
+              "oldPrice": 34,
+              "selected": false
+            },
+            {
+              "idOffers": 2,
+              "titleOffer": "face offer 1.2",
+              "price": 324,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "idNavigation": 2,
+          "titleNavigation": " GEL Manicure222",
+          "offers": [
+            {
+              "idOffers": 3,
+              "titleOffer": "face offer 2.1",
+              "price": 7,
+              "selected": false
+            },
+            {
+              "idOffers": 4,
+              "titleOffer": "face offer 2.2",
+              "price": 135,
+              "oldPrice": 55,
+              "selected": false
+            },
+            {
+              "idOffers": 5,
+              "titleOffer": "face offer 2.3",
+              "price": 788,
+              "oldPrice": 89,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "idNavigation": 3,
+          "titleNavigation": " GEL Manicure333",
+          "offers": [
+            {
+              "idOffers": 6,
+              "titleOffer": "Makeup offer 3.1",
+              "price": 432,
+              "selected": false
+            },
+            {
+              "idOffers": 7,
+              "titleOffer": "face offer 3.2",
+              "price": 135,
+              "selected": false
+            },
+            {
+              "idOffers": 8,
+              "titleOffer": "face offer 3.3",
+              "price": 444,
+              "selected": false
+            }
+          ]
+        }
+      ]
+    },{
+      "id": 2,
+      "title": "Makeup",
+      "image": "makeup",
+      "nav": [
+        {
+          "idNavigation": 4,
+          "titleNavigation": "Pedicure",
+          "offers": [
+            {
+              "idOffers": 9,
+              "titleOffer": "Pedicure offer 1.1",
+              "price": 997,
+              "oldPrice": 22,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "idNavigation": 5,
+          "titleNavigation": "Pedicure222",
+          "offers": [
+            {
+              "idOffers": 10,
+              "titleOffer": "Pedicure offer 2.1",
+              "price": 637,
+              "selected": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Nails",
+      "image": "nails-manicure",
+      "nav": [
+        {
+          "idNavigation": 6,
+          "titleNavigation": "Classic Manicure",
+          "offers": [
+            {
+              "idOffers": 11,
+              "titleOffer": "Nails offer 1.1",
+              "price": 45,
+              "selected": false
+            },
+            {
+              "idOffers": 12,
+              "titleOffer": "Nails offer 1.2",
+              "price": 145,
+              "selected": false
+            },
+            {
+              "idOffers": 13,
+              "titleOffer": "Nails offer 1.3",
+              "price": 229,
+              "selected": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -72,6 +72,7 @@ ul {
   outline: none;
   cursor: pointer;
   position: relative;
+  min-width: 24px;
 
   span {
     color: #ffffff;
@@ -257,6 +258,7 @@ ul {
             .price {
               display: block;
               float: left;
+              width: 75px;
 
               > span {
                 display: block;
@@ -328,10 +330,12 @@ ul {
           }
 
           div {
+            display: flex;
 
             .price {
               text-transform: uppercase;
               margin-right: 15px;
+              white-space: nowrap;
             }
 
             .remove {
@@ -339,7 +343,7 @@ ul {
               line-height: 15px;
               color: #264BCF;
               position: relative;
-              top: 4px;
+              top: 0;
             }
           }
         }
@@ -435,6 +439,7 @@ ul {
         .conditions {
           justify-content: center;
           margin-bottom: 20px;
+          text-align: center;
 
           .checkbox {
             position: relative;
@@ -466,7 +471,59 @@ ul {
           font-weight: 700;
           margin: 13px 0 17px;
           position: relative;
-          left: -7px;
+          left: -4px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  #choose-service {
+
+    .choose-service-top {
+
+      h2 {
+        font-size: 30px;
+      }
+
+      span {
+        font-size: 18px;
+        margin-top: 12px;
+      }
+    }
+
+    .list-data-service {
+
+      .data-service {
+
+        .selected-data-service {
+
+          .item {
+            padding: 11px 1.2% 7px 0;
+
+            .item-right-side {
+
+              .details {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      .choose-service-result {
+
+        .container-total {
+
+          .conditions {
+
+            .checkbox {
+              left: 0;
+              margin-right: 10px;
+            }
+          }
         }
       }
     }
